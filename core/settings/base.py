@@ -11,16 +11,26 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import json
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
+# read config secrets from JSON file
+json_conf_path = os.path.join(BASE_DIR, 'settings/conf.json')
+with open(str(json_conf_path), 'r') as myfile:
+    data=myfile.read()
+
+# parse json data
+json_conf = json.loads(data)
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'y6!k+p)!h0#q^4g%ijf*copeihln6yqa%gwc_zg^guee!o5(!x'
+SECRET_KEY = str(json_conf["SECRET_KEY"])
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
