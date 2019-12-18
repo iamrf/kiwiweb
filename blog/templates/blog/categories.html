@@ -1,0 +1,12 @@
+{% if cats %}
+    {% for cat in cats %}
+
+        <p>
+            <a href="{{ cat.get_absolute_url }}">{{ cat.title }}
+        </p>
+
+    {% endfor %}
+    <br>
+    <a href="{% url 'blog:home' %}">Blog Index</a>
+
+{% endif %}

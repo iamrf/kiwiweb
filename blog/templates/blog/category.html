@@ -1,0 +1,10 @@
+{% if cat %}
+
+    <p>
+        <h2>{{ cat.title }}</h2>
+        {{ cat.post.all }}
+    </p>
+    <br>
+    <a href="{% url 'blog:categories' %}">Cats Index</a>
+
+{% endif %}

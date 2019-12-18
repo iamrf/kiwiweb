@@ -12,3 +12,16 @@ def detail(request, slug):
     post = get_object_or_404(models.Post, slug=slug)
     context = {'post': post,}
     return render(request, 'blog/detail.html', context)
+
+
+def categories(request):
+    cats = models.Category.objects.all()
+    context = {'cats': cats,}
+    return render(request, 'blog/categories.html', context)
+
+
+def category(request, slug):
+    cat = get_object_or_404(models.Category, slug=slug)
+    context = {'cat': cat,}
+    return render(request, 'blog/category.html', context)
+
