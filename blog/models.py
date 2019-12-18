@@ -1,7 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 from django.utils import timezone
 from core.models import TimeStampedModel
+from . import views
 
 
 # Define a manager for published posts
@@ -50,6 +52,10 @@ class Post(TimeStampedModel):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse("blog:detail", kwargs={"slug": self.slug})
+    
 
 
 class Comment(TimeStampedModel):
