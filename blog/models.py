@@ -40,7 +40,7 @@ class Post(TimeStampedModel):
     tags = models.ManyToManyField(Tag, related_name="tags", blank=True, verbose_name="Tags")
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="author", verbose_name="Author")
     date = models.DateTimeField(default=timezone.now, verbose_name="Publish date")
-    publish = models.BooleanField(verbose_name="Published", default=False)
+    publish = models.BooleanField(verbose_name="Publish", default=False)
 
     objects = models.Manager()  # The default manager
     published = PublishedManager()  # The published posts manager
