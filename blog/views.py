@@ -1,3 +1,8 @@
 from django.shortcuts import render
+from . import models
 
-# Create your views here.
+
+def home(request):
+    posts = models.Post.published.order_by('-date')[:5]
+    context = {'posts': posts,}
+    return render(request, 'blog/home.html', context)
