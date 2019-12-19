@@ -10,7 +10,11 @@ def home(request):
 
 def detail(request, slug):
     post = get_object_or_404(models.Post, slug=slug)
-    context = {'post': post,}
+    comments = post.comments.filter(publish=True).order_by('-created')
+    context = {
+        'post': post,
+        'comments': comments,
+    }
     return render(request, 'blog/detail.html', context)
 
 

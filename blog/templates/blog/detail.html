@@ -13,4 +13,18 @@
     <br>
     <a href="{% url 'blog:home' %}">Blog Index</a>
 
+    <hr>
+    <p>
+
+
+        {% for cmnt in comments %}
+            {{ cmnt.name }} _ {{ cmnt.email }} _ <code>{{cmnt.created}}</code>
+            <p>
+                {{ cmnt.content }}
+            </p>
+        {% endfor %}
+
+
+    </p>
+
 {% endif %}
