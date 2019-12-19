@@ -1,0 +1,15 @@
+{% if tag %}
+
+    <p>
+        <h2>{{ tag.title }}</h2>
+
+        {% for post in tag.posts.all %}
+        <p>
+            {{ post.title }}
+        </p>
+        {% endfor %}
+    </p>
+    <br>
+    <a href="{% url 'blog:tags' %}">Tags Index</a>
+
+{% endif %}

@@ -30,3 +30,9 @@ def tags(request):
     tags = models.Tag.objects.all()
     context = {'tags': tags,}
     return render(request, 'blog/tags.html', context)
+
+
+def tag(request, slug):
+    tag = get_object_or_404(models.Tag, slug=slug)
+    context = {'tag': tag}
+    return render(request, 'blog/tag.html', context)

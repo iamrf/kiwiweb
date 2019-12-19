@@ -37,6 +37,9 @@ class Tag(TimeStampedModel):
     def __str__(self):
         return self.title
 
+    def get_absolute_url(self):
+        return reverse("blog:tag", kwargs={"slug": self.slug})
+
 
 class Post(TimeStampedModel):
     title = models.CharField(max_length=250, verbose_name="Title")

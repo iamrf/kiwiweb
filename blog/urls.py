@@ -10,4 +10,5 @@ urlpatterns = [
     path('categories/', views.categories, name="categories"),
     path('categories/<slug:slug>/', views.category, name="category"),
     path('tags/', views.tags, name="tags"),
+    path('tags/<slug:slug>/', views.tag, name="tag"),
 ]
