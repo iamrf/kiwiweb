@@ -2,7 +2,12 @@
 
     <p>
         <h2>{{ cat.title }}</h2>
-        {{ cat.post.all }}
+
+        {% for post in cat.posts.all %}
+        <p>
+            {{ post.title }}
+        </p>
+        {% endfor %}
     </p>
     <br>
     <a href="{% url 'blog:categories' %}">Cats Index</a>
