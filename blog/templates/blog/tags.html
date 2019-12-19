@@ -1,0 +1,12 @@
+{% if tags %}
+    {% for tag in tags %}
+
+        <p>
+            <a href="#">{{ tag.title }}
+        </p>
+
+    {% endfor %}
+    <br>
+    <a href="{% url 'blog:home' %}">Blog Index</a>
+
+{% endif %}

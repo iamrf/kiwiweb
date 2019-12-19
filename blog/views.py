@@ -25,3 +25,8 @@ def category(request, slug):
     context = {'cat': cat,}
     return render(request, 'blog/category.html', context)
 
+
+def tags(request):
+    tags = models.Tag.objects.all()
+    context = {'tags': tags,}
+    return render(request, 'blog/tags.html', context)
