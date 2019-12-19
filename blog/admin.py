@@ -30,7 +30,7 @@ class PostAdmin(admin.ModelAdmin):
 
 
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'created', 'publish',)
+    list_display = ('post', 'name', 'email', 'created', 'publish',)
     list_filter = ('created', 'publish',)
     search_fields = ('content','name', 'email', 'created', 'publish',)
     date_hierarchy = 'created'
