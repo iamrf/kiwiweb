@@ -15,7 +15,7 @@ def detail(request, slug):
         'post': post,
         'comments': comments,
     }
-    return render(request, 'blog/detail.html', context)
+    return render(request, 'blog/post.html', context)
 
 
 def categories(request):
