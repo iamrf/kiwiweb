@@ -17,7 +17,7 @@ class Category(TimeStampedModel):
     slug = models.SlugField(max_length=250, verbose_name="Slug", unique=True)
 
     class Meta:
-        ordering = ('title', '-created', '-modified')
+        ordering = ('slug', '-created', '-modified')
 
     def __str__(self):
         return self.title
@@ -32,7 +32,7 @@ class Tag(TimeStampedModel):
     slug = models.SlugField(max_length=250, verbose_name="Slug", unique=True)
 
     class Meta:
-        ordering = ('title', '-created', '-modified')
+        ordering = ('slug', '-created', '-modified')
 
     def __str__(self):
         return self.title
