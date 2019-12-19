@@ -3,11 +3,11 @@
     <p>
         <h2>{{ post.title }}</h2>
         {% for cat in post.categories.all %}
-            {{ cat.title }}, 
+            <a href="{{ cat.get_absolute_url }}">{{ cat.title }}</a>,
         {% endfor %}
         <br>
         {% for tag in post.tags.all %}
-            {{ tag.title }}, 
+            <a href="{{ tag.get_absolute_url }}">{{ tag.title }}</a>, 
         {% endfor %}
     </p>
     <br>

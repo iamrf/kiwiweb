@@ -5,7 +5,7 @@
 
         {% for post in cat.posts.all %}
         <p>
-            {{ post.title }}
+            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
         </p>
         {% endfor %}
     </p>
