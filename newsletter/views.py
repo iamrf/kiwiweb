@@ -8,7 +8,7 @@ from . import models
 def get_newsletter(request):
     error_msg = False
 
-    if request.method == 'POST':
+    if request.method == "POST":
         form = Newsletter(request.POST)
 
         if form.is_valid():
@@ -21,6 +21,9 @@ def get_newsletter(request):
             except IntegrityError:
                 error_msg = 'این ایمیل قبلا در سیستم ثبت شده'
 
+            except:
+                error_msg = 'متاسفانه مشکلی پیش آمده، لطفا دوباره تلاش کنید'
+
             else:
                 return HttpResponseRedirect(reverse('newsletter:success'))
 
@@ -30,7 +33,7 @@ def get_newsletter(request):
     context = {
         'form': form,
         'error': error_msg,
-        }
+    }
     return render(request, 'newsletter/form_page.html', context)
 
 
