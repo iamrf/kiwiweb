@@ -1,12 +1,6 @@
 from django.db import models
-from core.models import TimeStampedModel
+from core.models import TimeStampedModel, PublishedManager
 from django.urls import reverse
-
-
-# Define a manager for published posts
-class PublishedManager(models.Manager):
-    def get_queryset(self):
-        return super().get_queryset().filter(publish=True)
 
 
 class website(TimeStampedModel):

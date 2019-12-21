@@ -2,14 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
 from django.utils import timezone
-from core.models import TimeStampedModel
+from core.models import TimeStampedModel, PublishedManager
 from . import views
-
-
-# Define a manager for published posts
-class PublishedManager(models.Manager):
-    def get_queryset(self):
-        return super().get_queryset().filter(publish=True)
 
 
 class Category(TimeStampedModel):
