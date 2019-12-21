@@ -1,0 +1,9 @@
+{% if web_plans %}
+    {% for plan in web_plans %}
+
+        <p>
+        <h2><a href="{{ plan.get_absolute_url }}">{{ plan.title }}</a></h2>
+        </p>
+
+    {% endfor %}
+{% endif %}

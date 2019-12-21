@@ -1,0 +1,13 @@
+{% if plan %}
+
+    <h2>{{ plan.title }}</h2>
+    <p>
+    قالب : {{ plan.template }}<br>
+    دامنه : {{ plan.domain }}<br>
+    هاست : {{ plan.host }}<br>
+    </p>
+
+{% endif %}
+
+
+<br><br><a href="{% url 'services:home' %}">back to SERVICES</a>
