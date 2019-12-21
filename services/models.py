@@ -1,5 +1,6 @@
 from django.db import models
 from core.models import TimeStampedModel
+from django.urls import reverse
 
 
 # Define a manager for published posts
@@ -26,6 +27,7 @@ class website(TimeStampedModel):
     op_9 = models.CharField(max_length=200, verbose_name="Option 9", blank=True)
     desc = models.TextField(verbose_name="Description", blank=True)
     price = models.CharField(max_length=50, verbose_name="Price")
+    sort = models.IntegerField(blank=True, null=True, verbose_name="Sorting")
     publish = models.BooleanField(verbose_name="Publish", default=True)
 
     objects = models.Manager()  # The default manager
@@ -33,3 +35,7 @@ class website(TimeStampedModel):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse("services:website", kwargs={"slug": self.slug})
+    
