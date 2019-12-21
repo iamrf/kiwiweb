@@ -1,0 +1,9 @@
+{% if item %}
+    <p>
+        <h2>{{ item.title }}</h2>
+        {{ item.desc }}
+    </p>
+{% endif %}
+
+<br><br>
+<a href="{% url 'portfolio:home' %}">back to PORTFOLIO</a>

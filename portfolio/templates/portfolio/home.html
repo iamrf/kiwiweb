@@ -1,0 +1,7 @@
+{% if portfolio %}
+    {% for item in portfolio %}
+        <p>
+            <h2><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></h2>
+        </p>
+    {% endfor %}
+{% endif %}
