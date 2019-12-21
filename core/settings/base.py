@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'contact.apps.ContactConfig',
     'newsletter.apps.NewsletterConfig',
     'services.apps.ServicesConfig',
+    'portfolio.apps.PortfolioConfig',
 ]
 
 MIDDLEWARE = [
