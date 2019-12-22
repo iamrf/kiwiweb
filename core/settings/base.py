@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'contact.apps.ContactConfig',
     'newsletter.apps.NewsletterConfig',
     'services.apps.ServicesConfig',
+    'offer.apps.OfferConfig',
     'portfolio.apps.PortfolioConfig',
 ]
 
