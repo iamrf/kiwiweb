@@ -1,6 +1,7 @@
 from django.db import models
-from core.models import TimeStampedModel, PublishedManager
 from django.urls import reverse
+from core.models import TimeStampedModel, PublishedManager
+from offer.models import Offer
 
 
 class website(TimeStampedModel):
@@ -21,6 +22,7 @@ class website(TimeStampedModel):
     op_9 = models.CharField(max_length=200, verbose_name="Option 9", blank=True)
     desc = models.TextField(verbose_name="Description", blank=True)
     price = models.CharField(max_length=50, verbose_name="Price")
+    offer = models.ForeignKey(Offer, on_delete=models.CASCADE, blank=True, null=True, verbose_name="Offer")
     sort = models.IntegerField(blank=True, null=True, verbose_name="Sorting")
     publish = models.BooleanField(verbose_name="Publish", default=True)
 

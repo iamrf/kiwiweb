@@ -5,6 +5,12 @@
     قالب : {{ plan.template }}<br>
     دامنه : {{ plan.domain }}<br>
     هاست : {{ plan.host }}<br>
+    <h3>{{ plan.price }} تومان </h3>
+
+    {% if offer_price %}
+        {{ plan.offer.title }} - 
+        {{ offer_price }}
+    {% endif %}
     </p>
 
 {% endif %}

@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from . import models
+from offer.views import get_offer
 
 
 def home(request):
@@ -9,5 +10,12 @@ def home(request):
 
 def website(request, slug):
     plan = get_object_or_404(models.website, slug=slug)
-    context = {'plan': plan,}
+
+    # Get offer from get_offer() function
+    offer_price = get_offer(plan)
+
+    context = {
+        'plan': plan,
+        'offer_price': offer_price,
+    }
     return render(request, 'services/web_plan.html', context)
