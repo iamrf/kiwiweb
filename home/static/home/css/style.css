@@ -1,0 +1,196 @@
+@viewport{
+	zoom: 1.0;
+	width: device-width;
+}
+
+@font-face {
+	font-family: 'byekan';
+	src: url('../fonts/YekanWeb-Regular.woff');
+}
+
+/* 
+    *** CSS reset codes ***
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* 
+    *** End of CSS reset codes  ***
+*/
+
+
+
+
+*{
+	outline: 0;
+	box-sizing: border-box;
+}
+  
+html {
+	scroll-behavior: smooth;
+}
+  
+body{
+	direction: rtl;
+	font-family: 'byekan','ubuntu', Tahoma, 'Segoe UI', Verdana, sans-serif;
+	background-color: rgb(250, 250, 250);
+	transition: .5s;
+	overflow-x: hidden;
+	font-size: 1rem !important;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	height: 100%;
+	line-height: 2;
+}
+  
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+section#header{
+	background-color: #fff;
+	background-image: url('../img/header_bg1.svg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 100vh;
+	display: block;
+	top: 0px;
+}
+
+section#header img {
+	position: absolute;
+	bottom: 5%;
+	right: 10%;
+	width: 40%;
+	object-fit: cover;
+}
+
+#header .title {
+	display: block;
+	position: absolute;
+	bottom: 30%;
+	left: 10%;
+	width: 30%;
+	color: #005158;
+}
+
+section#header .title h1{
+	font-size: 7rem;
+}
+
+section#header .title h3 {
+	line-height: 4rem !important;
+
+}
+
+@media only screen and (orientation: portrait) {
+	section#header img {
+		bottom: 3% !important;
+		top: auto !important;
+		right: 15% !important;
+		width: 70%;
+	}
+
+	section#header .title{
+		width: 70% !important;
+		bottom: auto !important;
+		top: 15% !important;
+	}
+
+	section#header .title h1{
+		font-size: 5rem !important;
+	}
+}
+
+@media only screen and (max-width:1380px) {
+	section#header .title {
+		right: 10% !important;
+	}
+	
+	section#header .title h1{
+		font-size: 5rem !important;
+	}
+}
+
+
+nav a{
+	color: #00838f !important;
+}
+
+nav {
+	box-shadow: none !important;
+}
+
+nav ul li a {
+	padding: 0 4rem !important;
+	font-size: 1.5rem;
+	margin-left: 0.2rem;
+}
+
+nav ul li .highlight {
+	background-color: #00838f !important;
+	color: #fff !important;
+}
+
+nav ul li a:hover {
+	background-color: rgba(255, 255, 255, 1) !important;
+	color: #00838f !important;
+}
+
+
+@media only screen and (min-width:992px) {
+	nav ul{
+		margin-top: 3% !important;
+	}
+	nav .brand-logo {
+		margin-top: 10rem !important;
+		padding-left: 4rem !important;
+		width: 15rem !important;
+	}
+}
