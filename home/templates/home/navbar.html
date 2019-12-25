@@ -1,0 +1,24 @@
+{% load static %}
+
+<div class="navbar-fixed">
+  <nav>
+      <div class="nav-wrapper">
+        <a href="{% url 'home:index' %}" class="left brand-logo cyan-text text-darken-2">
+        <img src="{% static 'home/img/logo.svg' %}"></a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa fa-bars fa-2x"></i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="{% url 'home:index' %}">خانه</a></li>
+          <li><a href="{% url 'services:home' %}">خدمات</a></li>
+          <li><a href="{% url 'blog:home' %}">وبلاگ</a></li>
+          <li><a href="{% url 'contact:contact' %}" class="highlight">تماس با ما</a></li>
+        </ul>
+      </div>
+  </nav>
+</div>
+
+<ul class="sidenav" id="mobile-demo">
+    <li><a href="{% url 'home:index' %}">خانه</a></li>
+    <li><a href="{% url 'services:home' %}">خدمات</a></li>
+    <li><a href="{% url 'blog:home' %}">وبلاگ</a></li>
+    <li><a href="{% url 'contact:contact' %}">تماس با ما</a></li>
+</ul>
