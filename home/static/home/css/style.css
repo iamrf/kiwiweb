@@ -170,7 +170,7 @@ nav {
 nav ul li a {
 	padding: 0 4rem !important;
 	font-size: 1.5rem;
-	margin-left: 0.2rem;
+	margin-left: 0.5rem;
 }
 
 nav ul li .highlight {
@@ -192,5 +192,58 @@ nav ul li a:hover {
 		margin-top: 10rem !important;
 		padding-left: 4rem !important;
 		width: 15rem !important;
+	}
+}
+
+#services {
+	padding: 10rem 0;
+	background-color: #fff;
+	color: #005158;
+}
+
+#services .service_item img {
+	display: block;
+	margin: auto;
+	width: 70%;
+	object-fit: cover;
+}
+
+#services .service_item{
+	background-color: #fff;
+	transition: .3s !important;
+	padding: 3rem 2rem;
+	text-align: justify;
+}
+
+#services .service_item:hover {
+	transition: .3s !important;
+	padding: 2rem 2rem 4rem;
+}
+
+#services .service_item:nth-child(1):hover {
+	background-color: #d0efec !important;
+}
+
+#services .service_item:nth-child(2):hover {
+	background-color: #ffe08a !important;
+}
+
+#services .service_item:nth-child(4):hover {
+	background-color: #9fd69f !important;
+}
+
+#services .service_item:nth-child(5):hover {
+	background-color: #ffe5e5 !important;
+}
+
+@media only screen and (max-width:600px) {
+	#services .service_item img {
+		width: 50% !important;
+	}
+
+	#services .service_item h3 {
+		text-align: center;
+		margin: 2rem 0 !important;
+		font-size: 2.5rem;
 	}
 }
